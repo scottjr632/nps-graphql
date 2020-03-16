@@ -1,0 +1,1 @@
+export { default as ParksResolver } from './parks.resolver';

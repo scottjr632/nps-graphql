@@ -1,0 +1,1 @@
+export { default as ArticleResolver } from './articles.resolver';
