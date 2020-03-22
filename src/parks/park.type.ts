@@ -17,6 +17,8 @@ export class Park {
   @Field()
   designation: string
   @Field()
+  parkCode: string
+  @Field()
   directionsInfo: string
   @Field()
   directionsUrl: string

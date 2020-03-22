@@ -91,6 +91,7 @@ type Park {
   contacts: Contact!
   description: String!
   designation: String!
+  parkCode: String!
   directionsInfo: String!
   directionsUrl: String!
   entranceFees: [CDT!]!
@@ -118,5 +119,5 @@ type Query {
   getAlerts: PaginatedAlertsResponse!
   getArticles: PaginatedArticleResponse!
   getHello: String!
-  getParks: PaginatedParkResponse!
+  getParks(parkCodes: [String!], stateCodes: [String!], limit: Float, start: Float, q: String): PaginatedParkResponse!
 }

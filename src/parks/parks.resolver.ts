@@ -1,8 +1,10 @@
-import { Resolver, Query } from 'type-graphql';
+import { Resolver, Query, Arg, Args } from 'type-graphql';
 
 import { PaginatedParkResponse } from './paginated-parks.type';
 import { ParksService } from './park.service';
 import { Park } from './park.type';
+import { GenericArgs } from '../services/nps.service';
+import { GetParksArgs } from './args.types';
 
 @Resolver(Park)
 export class ParkResolver {
@@ -10,8 +12,17 @@ export class ParkResolver {
     private readonly parksService: ParksService
   ){}
   @Query(() => PaginatedParkResponse)
-  async getParks(): Promise<PaginatedParkResponse> {
-    return this.parksService.getParks();
+  async getParks(@Args() {parkCodes, stateCodes, limit, start, q}: GetParksArgs)
+      : Promise<PaginatedParkResponse> {
+ 
+    let args: GenericArgs = {
+      parkCodes,
+      stateCodes,
+      limit,
+      start,
+      q
+    }
+    return this.parksService.getParks(args);
   }
 }
 
