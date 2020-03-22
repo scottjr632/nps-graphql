@@ -4,7 +4,7 @@ import { PaginatedParkResponse } from './paginated-parks.type';
 import { ParksService } from './park.service';
 import { Park } from './park.type';
 import { GenericArgs } from '../services/nps.service';
-import { GetParksArgs } from './args.types';
+import { GetParksArgs } from '../types/args.types';
 
 @Resolver(Park)
 export class ParkResolver {

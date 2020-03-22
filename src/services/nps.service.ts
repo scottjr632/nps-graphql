@@ -19,13 +19,9 @@ const buildQueryString = ({
 }: GenericArgs): string => {
   let queryString = '';
 
-  if (parkCodes) {
-    parkCodes.map(parkCode => queryString+= `&parkCode=${parkCode}`);
-  }
+  queryString += parkCodes ? `&parkCode=` + parkCodes.join('%2C') : ''
 
-  if (stateCodes) {
-    stateCodes.map(stateCode => queryString+= `&stateCode=${stateCode}`);
-  }
+  queryString += stateCodes ? `&stateCode=` + stateCodes.join('%2C') : ''
   
   queryString += limit ? `&limit=${limit}` : '';
   queryString += start ? `&start=${start}` : '';

@@ -97,6 +97,7 @@ type Park {
   entranceFees: [CDT!]!
   entrancePasses: [CDT!]!
   fullName: String!
+  latLong: String!
   id: String!
   images: [Image!]!
 }

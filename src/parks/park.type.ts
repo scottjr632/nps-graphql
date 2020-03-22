@@ -29,6 +29,8 @@ export class Park {
   @Field()
   fullName: string
   @Field()
+  latLong: string
+  @Field()
   id: string
   @Field(type => [Image])
   images: Image[]
