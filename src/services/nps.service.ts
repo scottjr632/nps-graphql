@@ -19,10 +19,10 @@ const buildQueryString = ({
 }: GenericArgs): string => {
   let queryString = '';
 
-  queryString += parkCodes ? `&parkCode=` + parkCodes.join('%2C') : ''
+  queryString += parkCodes ? '&parkCode=' + parkCodes.join('%2C') : '';
 
-  queryString += stateCodes ? `&stateCode=` + stateCodes.join('%2C') : ''
-  
+  queryString += stateCodes ? '&stateCode=' + stateCodes.join('%2C') : '';
+
   queryString += limit ? `&limit=${limit}` : '';
   queryString += start ? `&start=${start}` : '';
   queryString += q ? `&q=${q}` : '';
